@@ -1,8 +1,6 @@
-# Panduan Instalasi Proyek XYZ
+# Panduan Instalasi Proyek Kelompok 2
 
-Selamat datang di Proyek XYZ! Ikuti langkah-langkah berikut untuk mengatur dan menjalankan proyek di komputer lokal.
-
-![Project Logo](https://via.placeholder.com/150)
+Ikuti langkah-langkah berikut untuk mengatur dan menjalankan proyek di komputer lokal .
 
 ## Anggota Kelompok
 - **Michael** (2226240001)
