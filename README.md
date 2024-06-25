@@ -1,8 +1,6 @@
-# Panduan Instalasi Proyek Kelompok 2
+# Panduan Instalasi Proyek Penjualan,Pembelian dan Persediaan Pada Toko Plastik Kelompok 2
 
-Ikuti langkah-langkah berikut untuk mengatur dan menjalankan proyek di komputer lokal .
-
-## Anggota Kelompok
+## Anggota Kelompok 2
 - **Michael** (2226240001)
 - **Jenifer Gunawan** (2226240003)
 - **Anas Al Marzaq** (2226240070)
@@ -30,28 +28,28 @@ Ikuti langkah-langkah berikut untuk mengatur dan menjalankan proyek di komputer 
 - Buka browser Anda dan navigasikan ke [phpMyAdmin](http://localhost/phpmyadmin).
 - Buat database baru.
 
-### Langkah 6: Perbarui Konfigurasi Lingkungan
-- Di Visual Studio Code, buka file `.env`.
+### Langkah 6: Perbarui Konfigurasi .env
+- Buka Folder yang telah didownload tadi pada Visual Studio Code dan buka file `.env`.
 - Ubah nilai `DB_DATABASE` menjadi nama database yang baru Anda buat:
   ```env
-  DB_DATABASE=nama_database_anda
+  DB_DATABASE= nama_database_anda
 
 ### Langkah 7: Migrasi Database
-- Pada terminal di Visual Studio Code, jalankan perintah berikut:
+- Pada terminal di Visual Studio Code, jalankan perintah berikut untuk melakukan migrasi database:
   ```bash
   php artisan migrate
 
 ### Langkah 8: Seed Database
-- Pada terminal di Visual Studio Code, jalankan perintah berikut:
+- Pada terminal di Visual Studio Code, jalankan perintah berikut untuk menambahkan kredensial Admin:
   ```bash
   php artisan db:seed
 
 ### Langkah 9: Kredensial Pengguna Admin
-- Gunakan kredensial berikut untuk masuk sebagai admin:
-- **Email: admin@admin.com
-- **Password: password
+- Berikut merupakan kredensial untuk masuk sebagai admin:
+- **Email: admin@admin.com**
+- **Password: password**
 
-### Langkah 10: Jalankan Server Pengembangan
+### Langkah 10: Jalankan Server
 - Pada terminal di Visual Studio Code, jalankan perintah berikut:
   ```bash
   php artisan serve
@@ -59,3 +57,5 @@ Ikuti langkah-langkah berikut untuk mengatur dan menjalankan proyek di komputer 
 ### Langkah 11: Akses Aplikasi
 - Buka browser Anda dan pergi ke http://127.0.0.1:8000/.
 - Masuk menggunakan kredensial admin yang telah disediakan di atas.
+
+**Atau kamu bisa membuka aplikasi tersebut yang telah kami Hosting di tokoplastikcharlesjaya.my.id**
