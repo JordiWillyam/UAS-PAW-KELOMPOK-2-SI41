@@ -58,4 +58,4 @@
 - Buka browser Anda dan pergi ke http://127.0.0.1:8000/.
 - Masuk menggunakan kredensial admin yang telah disediakan di atas.
 
-**Atau kamu bisa membuka aplikasi tersebut yang telah kami Hosting di** - tokoplastikcharlesjaya.my.id
+**Atau kamu bisa membuka aplikasi tersebut yang telah kami Hosting di** - https://tokoplastikcharlesjaya.my.id/
