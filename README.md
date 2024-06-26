@@ -11,10 +11,10 @@
 ## Petunjuk Instalasi
 
 ### Langkah 1: Unduh Proyek
-- Unduh file proyek dalam format RAR atau fork repositori ini.
+- Unduh file proyek dalam format Zip atau fork repositori ini.
 
 ### Langkah 2: Buka di Visual Studio Code
-- Ekstrak file RAR (jika diunduh) dan buka folder tersebut di Visual Studio Code.
+- Ekstrak file Zip (jika diunduh) dan buka folder tersebut di Visual Studio Code.
 
 ### Langkah 3: Perbarui Composer
 - Pada terminal di Visual Studio Code, jalankan perintah berikut:
