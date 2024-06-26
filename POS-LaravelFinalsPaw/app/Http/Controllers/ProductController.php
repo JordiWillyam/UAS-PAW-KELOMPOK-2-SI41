@@ -47,12 +47,6 @@ class ProductController extends Controller
      */
     public function store(ProductStoreRequest $request)
     {
-        // $getAllStock = Product::where('id', $id)->first();
-
-        // if($request->price >$getAllStock->stock){
-        //     return back();
-        // }
-        $image_path = '';
 
         // if ($request->hasFile('image')) {
         //     $image_path = $request->file('image')->store('products', 'public');
@@ -61,11 +55,11 @@ class ProductController extends Controller
         $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
-            // 'image' => $image_path,
             'barcode' => $request->barcode,
             'price' => $request->price,
             'quantity' => $request->quantity,
-            // 'status' => $request->status
+            'unit' => $request->unit,
+
         ]);
 
         if (!$product) {
@@ -110,6 +104,7 @@ class ProductController extends Controller
         $product->barcode = $request->barcode;
         $product->price = $request->price;
         $product->quantity = $request->quantity;
+        $product->unit = $request->unit;
         $product->status = $request->status;
 
         if ($request->hasFile('image')) {

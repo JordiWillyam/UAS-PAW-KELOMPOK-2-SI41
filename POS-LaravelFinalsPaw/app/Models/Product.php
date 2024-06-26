@@ -13,6 +13,7 @@ class Product extends Model
         'barcode',
         'price',
         'quantity',
+        'unit',
         'status'
     ];
     public function purchases()

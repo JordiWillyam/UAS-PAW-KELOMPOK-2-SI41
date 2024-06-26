@@ -34,19 +34,6 @@
                 @enderror
             </div>
 
-            {{-- <div class="form-group">
-                <label for="image">Product Image</label>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="image" id="image">
-                    <label class="custom-file-label" for="image">Choose File</label>
-                </div>
-                @error('image')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div> --}}
-
             <div class="form-group">
                 <label for="barcode">Product Code</label>
                 <input type="text" name="barcode" class="form-control @error('barcode') is-invalid @enderror"
@@ -71,7 +58,7 @@
 
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <input type="text" name="quantity" class="form-control @error('quantity') is-invalid @enderror"
+                <input type="number" name="quantity" class="form-control @error('quantity') is-invalid @enderror"
                     id="quantity" placeholder="Quantity" value="{{ old('quantity', 1) }}">
                 @error('quantity')
                 <span class="invalid-feedback" role="alert">
@@ -79,19 +66,25 @@
                 </span>
                 @enderror
             </div>
+            <div class="form-group">
+                <label for="unit">Unit</label>
+                    <select id="unit" class="form-control @error('unit') is-invalid @enderror" name="unit">
+                        <option value="Pcs">Pcs</option>
+                        <option value="Roll">Roll</option>
+                        <option value="Dus">Dus</option>
+                        <option value="Pack">Pack</option>
+                        <option value="Sheet">Sheet</option>
+                        <option value="Sack">Sack</option>
+                        <option value="Kg">Kilogram</option>
+                    </select>
 
-            {{-- <div class="form-group">
-                <label for="status" type="hidden">Status</label>
-                <select name="status" class="form-control @error('status') is-invalid @enderror" id="status" type="hidden">
-                    <option value="1" {{ old('status') === 1 ? 'selected' : ''}}>Active</option>
-                    <option value="0" {{ old('status') === 0 ? 'selected' : ''}}>Inactive</option>
-                </select>
-                @error('status')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
-            </div> --}}
+                    @error('unit')
+                    <span class="invalid-feedback" unit="alert">
+                       <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
+            </div>
             <div class="form-group" style="display: none;">
                 <label for="status" type="hidden">Status</label>
                 <select name="status" class="form-control @error('status') is-invalid @enderror" id="status">

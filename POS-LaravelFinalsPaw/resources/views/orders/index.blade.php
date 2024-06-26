@@ -8,13 +8,9 @@
 @endsection
 
 @section('content')
-{{-- @if(session('cimory'))
-    <span>{{session('cimory')}}</span>
-@endif --}}
 <div class="card">
     <div class="card-body">
         <div class="row">
-            <!-- <div class="col-md-3"></div> -->
             <div class="col-md-12">
                 <form action="{{route('orders.index')}}">
                     <div class="row">
@@ -61,7 +57,7 @@
                     </td>
                     <td>
                         @foreach ($order->items as $item)
-                        {{$item->quantity }}</br>
+                        {{$item->quantity }}   {{$item->product->unit}}</br>
                         @endforeach
 
                     </td>

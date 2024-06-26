@@ -68,7 +68,7 @@
                 @foreach ($order->items as $item)
                     <tr>
                         <td>{{ $item->product->name }}</td>
-                        <td>{{ $item->quantity }}</td>
+                        <td>{{ $item->quantity }}   {{$item->product->unit}}</td>
                         <td>{{ number_format($item->price, 2) }}</td>
                         <td>{{ number_format($item->quantity * $item->price, 2) }}</td>
                     </tr>
@@ -76,9 +76,11 @@
             </tbody>
         </table>
         <div class="footer">
-            <p>Total Harga : {{ number_format($order->items->sum(function ($item) { return $item->quantity * $item->price; }), 2) }}</p>
+            <p>Total Harga : {{ config('settings.currency_symbol') }}{{ number_format($order->items->sum(function ($item) { return $item->quantity * $item->price; }), 2) }}</p>
             <p>Total Bayar : {{ config('settings.currency_symbol') }} {{$order->formattedReceivedAmount()}}</p>
-            <p>Kembalian : {{config('settings.currency_symbol')}} {{number_format($order->total() - $order->receivedAmount(), 2)}}</p>
+            <p>Kembalian : {{config('settings.currency_symbol')}} {{number_format( $order->receivedAmount()- ($item->quantity*$item->price), 2)}}</p>
+            <p align="center">Terima Kasih </p>
+            <p align="center">Selamat Berbelanja Kembali</p>
         </div>
     </div>
 </body>

@@ -59,9 +59,9 @@
                     <th>Product Code</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    <th>Unit</th>
                     <th>Quantity Purchases</th>
                     <th>Quantity Orders</th>
-                    {{-- <th>Status</th> --}}
                     <th>Created At</th>
                     <th>Updated At</th>
                 </tr>
@@ -75,6 +75,7 @@
                     <td>{{ $product->barcode }}</td>
                     <td>{{ config('settings.currency_symbol') . number_format($product->price )}}</td>
                     <td align="center">{{ $product->quantity }}</td>
+                    <td>{{$product->unit}}</td>
                     <td align="center">
                         {{$product->total()}}
 
@@ -83,7 +84,6 @@
                         {{$product->totalcart()}}
 
                     </td>
-                    {{-- <td><span class="right badge badge-{{ $product->status ? 'success' : 'danger' }}">{{ $product->status ? 'Active' : 'Inactive' }}</span></td> --}}
                     <td>{{ $product->created_at }}</td>
                     <td>{{ $product->updated_at }}</td>
 

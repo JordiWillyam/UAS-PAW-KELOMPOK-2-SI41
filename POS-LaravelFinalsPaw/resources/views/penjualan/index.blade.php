@@ -37,6 +37,7 @@
                                 <tr>
                                     <th>Product</th>
                                     <th>Quantity</th>
+                                    <th>Unit</th>
                                     <th class="text-right">Price</th>
                                 </tr>
                             </thead>
@@ -111,7 +112,7 @@
             const product = getDataProduk.find(product => product.barcode === barcode);
 
             if (product) {
-                klikShowData(product.name, product.price, product.id, product.quantity);
+                klikShowData(product.name, product.price, product.id,product.unit, product.quantity);
                 event.target.value = '';
             } else {
                 alert('Produk tidak ditemukan');
@@ -119,14 +120,15 @@
         }
     });
 
-    function klikShowData(productName, productPrice, productId) {
+    function klikShowData(productName, productPrice, productId, productUnit) {
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
             <td data-product-id="${productId}">${productName}</td>
             <td>
                 <input type="number" value="1" min="1" class="form-control d-inline-block" style="width: 60px;" onchange="updateTotalPrice()">
-                <button class="btn btn-danger btn-sm d-inline-block" style="margin-left: 10px;" onclick="removeRow(this)">Hapus</button>
+                <button class="btn btn-danger btn-sm d-inline-block" style="margin-left: 10px;" onclick="removeRow(this)"><i class="fas fa-trash"></i></button>
             </td>
+            <td>${productUnit}</td>}
             <td class="text-right">
                 <input type="number" value="${productPrice.toFixed(2)}" min="1" class="form-control text-right" onchange="updateTotalPrice()" disabled style="font-size: 18px" >
             </td>
@@ -145,7 +147,7 @@
 
         document.querySelectorAll('#purchase-table-body tr').forEach(row => {
             const quantity = parseFloat(row.querySelector('input[type="number"]').value);
-            const price = parseFloat(row.querySelector('td:nth-child(3) input').value);
+            const price = parseFloat(row.querySelector('td:nth-child(4) input').value);
             totalPrice += quantity * price;
         });
 
@@ -203,7 +205,7 @@
                 const product = {
                     product_id: row.querySelector('td[data-product-id]').getAttribute('data-product-id'),
                     quantity: row.querySelector('input[type="number"]').value,
-                    price: row.querySelector('td:nth-child(3) input').value,
+                    price: row.querySelector('td:nth-child(4) input').value,
                 };
                 products.push(product);
             });

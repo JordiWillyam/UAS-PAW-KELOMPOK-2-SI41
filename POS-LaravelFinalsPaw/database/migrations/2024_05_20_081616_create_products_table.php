@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('barcode')->unique();
             $table->integer('price');
+            $table->string('unit');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

@@ -25,10 +25,10 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    {{-- <th>Image</th> --}}
                     <th>Product Code</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    <th>Unit</th>
                     <th>Description</th>
                     <th>Created At</th>
                     <th>Updated At</th>
@@ -40,11 +40,10 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->name }}</td>
-                    {{-- <td><img class="product-img img-thumbnail" src="{{ Storage::url($product->image) }}" alt=""></td> --}}
                     <td>{{ $product->barcode }}</td>
                     <td>{{ config('settings.currency_symbol') . number_format($product->price) }}</td>
                     <td>{{ $product->quantity }}</td>
-                    {{-- <td><span class="right badge badge-{{ $product->status ? 'success' : 'danger' }}">{{ $product->status ? 'Active' : 'Inactive' }}</span></td> --}}
+                    <td>{{$product->unit}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{ $product->created_at }}</td>
                     <td>{{ $product->updated_at }}</td>

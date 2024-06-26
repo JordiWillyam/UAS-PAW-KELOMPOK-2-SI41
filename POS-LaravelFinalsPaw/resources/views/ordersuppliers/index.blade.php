@@ -53,7 +53,7 @@
                     </td>
                     <td>
                         @foreach ($order->items as $item)
-                        {{$item->quantity }}</br>
+                        {{$item->quantity }}   {{$item->product->unit}}</br>
                         @endforeach
                     </td>
                     <td>

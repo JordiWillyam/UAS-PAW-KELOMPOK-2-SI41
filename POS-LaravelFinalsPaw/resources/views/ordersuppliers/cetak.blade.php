@@ -31,11 +31,11 @@
         <form action="{{route('ordersupplier.cetak')}}">
             <div class="row">
                 <div class="col-md-5">
-                    <p>Dari Tanggal :</p>
+                    <p>Start Date :</p>
 
                 </div>
                 <div class="col-md-5">
-                    <p>Sampai Tanggal :</p>
+                    <p>End Date :</p>
                 </div>
             </div>
             <div class="row">
@@ -75,7 +75,7 @@
                     </td>
                     <td align="center">
                         @foreach ($order->items as $item)
-                        {{$item->quantity }}</br>
+                        {{$item->quantity }}   {{$item->product->unit}}</br>
                         @endforeach
                     </td>
                     <td align="center">
