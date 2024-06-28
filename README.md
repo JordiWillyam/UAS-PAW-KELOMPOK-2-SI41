@@ -2,7 +2,7 @@
 
 Kelompok 2  
 Kelas : SI41  
-Universitas Multi Data Palembang  
+[Universitas Multi Data Palembang](https://mdp.ac.id/)
 
 ## Anggota Kelompok 2
 - **Michael** (2226240001)
