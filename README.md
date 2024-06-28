@@ -1,4 +1,7 @@
-# Panduan Instalasi Proyek Penjualan,Pembelian dan Persediaan Pada Toko Plastik Kelompok 2
+# Panduan Instalasi Proyek Penjualan,Pembelian dan Persediaan Pada Toko Plastik 
+Kelompok 2
+Kelas SI41
+Universitas Multi Data Palembang
 
 ## Anggota Kelompok 2
 - **Michael** (2226240001)
