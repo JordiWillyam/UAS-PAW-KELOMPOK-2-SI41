@@ -14,7 +14,7 @@
 - Unduh file proyek dalam format Zip atau fork repositori ini.
 
 ### Langkah 2: Buka di Visual Studio Code
-- Ekstrak file Zip (jika diunduh) dan buka folder tersebut di Visual Studio Code.
+- Ekstrak file Zip (jika diunduh) dan buka folder POS-LaravelFinalsPaw di Visual Studio Code.
 
 ### Langkah 3: Perbarui Composer
 - Pada terminal di Visual Studio Code, jalankan perintah berikut:
@@ -23,6 +23,7 @@
 
 ### Langkah 4: Jalankan XAMPP
 - Buka XAMPP dan aktifkan modul Apache dan MySQL.
+- Jika kamu belum memiliki aplikasi XAMPP kamu bisa mendownloadnya di [XAMPP](https://www.apachefriends.org/download.html)
 
 ### Langkah 5: Buat Database
 - Buka browser Anda dan navigasikan ke [phpMyAdmin](http://localhost/phpmyadmin).
