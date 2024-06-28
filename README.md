@@ -30,7 +30,7 @@
 - Buat database baru.
 
 ### Langkah 6: Perbarui Konfigurasi .env
-- Buka Folder yang telah didownload tadi pada Visual Studio Code dan buka file `.env`.
+- Buka Folder POS-LaravelFinalsPaw pada Visual Studio Code dan buka file `.env`.
 - Ubah nilai `DB_DATABASE` menjadi nama database yang baru Anda buat:
   ```env
   DB_DATABASE= nama_database_anda
