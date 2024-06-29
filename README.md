@@ -14,52 +14,52 @@ Kelas : SI41
 
 ## Petunjuk Instalasi
 
-### Langkah 1: Unduh Proyek
+### Step 1: Download Project
 - Unduh file proyek dalam format Zip atau fork repositori ini.
 
-### Langkah 2: Buka di Visual Studio Code
+### Step 2: Open in Visual Studio Code
 - Ekstrak file Zip (jika diunduh) dan buka folder POS-LaravelFinalsPaw di Visual Studio Code.
 
-### Langkah 3: Perbarui Composer
+### Step 3: Update Composer
 - Pada terminal di Visual Studio Code, jalankan perintah berikut:
   ```bash
   composer update
 
-### Langkah 4: Jalankan XAMPP
+### Step 4: Run XAMPP
 - Buka XAMPP dan aktifkan modul Apache dan MySQL.
 - Jika kamu belum memiliki aplikasi XAMPP kamu bisa mendownloadnya di [XAMPP](https://www.apachefriends.org/download.html)
 
-### Langkah 5: Buat Database
+### Step 5: Create a Database
 - Buka browser Anda dan navigasikan ke [phpMyAdmin](http://localhost/phpmyadmin).
 - Buat database baru.
 
-### Langkah 6: Perbarui Konfigurasi .env
+### Step 6: Update .env Configuration
 - Buka Folder POS-LaravelFinalsPaw pada Visual Studio Code dan buka file `.env`.
 - Ubah nilai `DB_DATABASE` menjadi nama database yang baru Anda buat:
   ```env
   DB_DATABASE= nama_database_anda
 
-### Langkah 7: Migrasi Database
+### Step 7: Database Migration
 - Pada terminal di Visual Studio Code, jalankan perintah berikut untuk melakukan migrasi database:
   ```bash
   php artisan migrate
 
-### Langkah 8: Seed Database
+### Step 8: Seed Database
 - Pada terminal di Visual Studio Code, jalankan perintah berikut untuk menambahkan kredensial Admin:
   ```bash
   php artisan db:seed
 
-### Langkah 9: Kredensial Pengguna Admin
+### Step 9: Admin User Credentials
 - Berikut merupakan kredensial untuk masuk sebagai admin:
 - **Email: admin@admin.com**
 - **Password: password**
 
-### Langkah 10: Jalankan Server
+### Step 10: Start the Server
 - Pada terminal di Visual Studio Code, jalankan perintah berikut:
   ```bash
   php artisan serve
 
-### Langkah 11: Akses Aplikasi
+### Step 11: Access the Application
 - Buka browser Anda dan pergi ke http://127.0.0.1:8000/.
 - Masuk menggunakan kredensial admin yang telah disediakan di atas.
 
