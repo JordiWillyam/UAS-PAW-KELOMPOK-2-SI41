@@ -7,7 +7,7 @@ Kelas : SI41
 ## Anggota Kelompok 2
 - **Michael** (2226240001)
 - **Jenifer Gunawan** (2226240003)
-- **Anas Al Marzaq** (2226240070)
+- **Anas Al Marzaq** (2226240072)
 - **Jordi Willyam AK** (2226240138)
 - **Michael Richi** (2226240154)
 - **Krisna Riyandi** (2226240155)
