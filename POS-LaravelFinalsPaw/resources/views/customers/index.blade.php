@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-body">
             <form action="{{ route('customers.index') }}" method="GET" class="form-inline mb-3">
-                <input type="text" name="search" placeholder="Search Supplier" class="form-control mr-2" value="{{ request('search') }}">
+                <input type="text" name="search" placeholder="Search Customer" class="form-control mr-2" value="{{ request('search') }}">
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
         <table class="table table-bordered table-hover">

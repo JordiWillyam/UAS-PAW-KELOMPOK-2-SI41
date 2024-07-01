@@ -4,10 +4,9 @@
 @section('content-header', 'Sales Page')
 
 @section('content')
-
 <div id="purchase">
     <div class="row">
-        <div class="col-md-8 col-lg-6">
+        <div class="col-md-6 col-lg-6">
             <div class="row mb-2">
                 <div class="col">
                     <form id="barcodeForm">
@@ -15,7 +14,9 @@
                     </form>
                 </div>
                 <div class="col">
-                    <select class="form-control" id="customer_id">
+                    <select class="form-control" id="supplier_id">
+                        {{-- <option value="-1">Pilih Salah Satu</option> --}}
+
                         <option value="" selected disabled >CASH</option>
                         @foreach($getData as $customer)
                             <option value="{{ $customer->id }}">{{ $customer->name }}</option>
@@ -26,7 +27,7 @@
 
             <form id="purchaseForm" method="POST" action="{{ route('penjualan.store') }}">
                 @csrf
-                <input type="hidden" name="customer_id" id="hiddenSupplierId">
+                <input type="hidden" name="supplier_id" id="hiddenSupplierId">
                 <input type="hidden" name="products" id="hiddenProducts">
                 <input type="hidden" name="amount" id="hiddenPaymentAmount">
 
@@ -62,13 +63,22 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-4 col-lg-6 order-product" id="product-list">
+        <div class="col-md-6 col-lg-6 order-product" id="product-list">
+            {{-- col-md-6 col-lg-6 --}}
             <div class="mb-2">
                 @livewire('product-search')
             </div>
+            {{-- <div class="order-product" id="product-list">
+                @foreach ($getDataProduk as $data)
+                    <span class="d-flex align-items-center mb-2" data-product-id="{{ $data->id }}" data-sb="">
+                        <button onclick="klikShowData('{{ $data->name }}', {{ $data->price }}, {{ $data->id }})" class="btn btn-primary btn-sm ml-2">{{ $data->name }}</button>
+                    </span>
+                @endforeach
+            </div> --}}
         </div>
     </div>
 </div>
+<!-- Payment Modal -->
 <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -102,6 +112,7 @@
 
 <script>
 
+
     const getDataProduk = @json($getDataProduk);
 
     document.getElementById('barcode').addEventListener('keypress', function (event) {
@@ -112,7 +123,7 @@
             const product = getDataProduk.find(product => product.barcode === barcode);
 
             if (product) {
-                klikShowData(product.name, product.price, product.id,product.unit, product.quantity);
+                klikShowData(product.name, product.price, product.id,product.unit,product.quantity);
                 event.target.value = '';
             } else {
                 alert('Produk tidak ditemukan');
@@ -126,11 +137,13 @@
             <td data-product-id="${productId}">${productName}</td>
             <td>
                 <input type="number" value="1" min="1" class="form-control d-inline-block" style="width: 60px;" onchange="updateTotalPrice()">
+
                 <button class="btn btn-danger btn-sm d-inline-block" style="margin-left: 10px;" onclick="removeRow(this)"><i class="fas fa-trash"></i></button>
+
             </td>
-            <td>${productUnit}</td>}
+            <td data-product-unit="${productId}">${productUnit}</td>
             <td class="text-right">
-                <input type="number" value="${productPrice.toFixed(2)}" min="1" class="form-control text-right" onchange="updateTotalPrice()" disabled style="font-size: 18px" >
+                <input type="number" value="${productPrice.toFixed(2)}" min="1" class="form-control text-right" onchange="updateTotalPrice()" disabled style="font-size: 18px">
             </td>
         `;
         document.getElementById('purchase-table-body').appendChild(newRow);
@@ -158,7 +171,7 @@
     function cancelPurchase() {
         document.getElementById('purchase-table-body').innerHTML = '';
         document.getElementById('total-price').textContent = '0.00';
-        document.getElementById('customer_id').value = '';
+        document.getElementById('supplier_id').value = '';
     }
 
     function formatRupiah(angka) {
@@ -189,14 +202,14 @@
         const paymentAmount = parseFloat(document.getElementById('paymentAmount').value);
 
         if (paymentAmount < totalPrice) {
-            alert('Uang Anda tidak Cukup !!! Mohon di isi Jumlah Uang yang Benar');
+            alert('The amount provided is less than the total cost, Please provide the correct amount');
         } else {
             const changeAmount = paymentAmount - totalPrice;
 
             $('#paymentModal').modal('hide');
             document.getElementById('hiddenPaymentAmount').value = paymentAmount;
 
-            const supplierId = document.getElementById('customer_id').value;
+            const supplierId = document.getElementById('supplier_id').value;
             document.getElementById('hiddenSupplierId').value = supplierId;
 
             const products = [];

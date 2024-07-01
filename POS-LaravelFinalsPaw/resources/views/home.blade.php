@@ -5,7 +5,6 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-		<!-- Log on to codeastro.com for more projects -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-purple">
@@ -51,9 +50,7 @@
 
     </div>
 
-    <div class="row"><!-- Log on to codeastro.com for more projects -->
-
-          <!-- ./col -->
+    <div class="row">
 
     <div class="col-lg-4 col-6">
         <!-- small box -->
@@ -73,9 +70,9 @@
         <!-- small box -->
         <div class="small-box bg-teal">
           <div class="inner">
-            <h3>Laporan</h3>
+            <h3>Report</h3>
 
-            <p>Stok Barang</p>
+            <p>Stock Product</p>
           </div>
           <div class="icon">
             <i class="fas fa-dolly-flatbed"></i>
@@ -88,9 +85,9 @@
         <!-- small box -->
         <div class="small-box bg-blue">
           <div class="inner">
-            <h3>Laporan</h3>
+            <h3>Report</h3>
 
-            <p>Penjualan</p>
+            <p>Orders</p>
           </div>
           <div class="icon">
           <i class="fa fa-chart-line"></i>
@@ -104,9 +101,9 @@
                 <!-- small box -->
                 <div class="small-box bg-blue">
                   <div class="inner">
-                    <h3>Laporan</h3>
+                    <h3>Reports</h3>
 
-                    <p>Pembelian</p>
+                    <p>Purchase</p>
                   </div>
                   <div class="icon">
                     <i class="fas fa-money-check-alt"></i>
@@ -116,5 +113,5 @@
               </div>
               <!-- ./col -->
         </div>
-</div><!-- Log on to codeastro.com for more projects -->
+</div>
 @endsection

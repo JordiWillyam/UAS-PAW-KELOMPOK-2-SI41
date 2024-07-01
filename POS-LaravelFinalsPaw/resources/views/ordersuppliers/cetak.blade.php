@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Orders List')
+@section('title', 'Print Report')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +60,7 @@
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Total</th>
+                    {{-- <th>Status</th> --}}
                     <th>Created At</th>
                 </tr>
             </thead>
@@ -75,26 +76,38 @@
                     </td>
                     <td align="center">
                         @foreach ($order->items as $item)
-                        {{$item->quantity }}   {{$item->product->unit}}</br>
-                        @endforeach
-                    </td>
-                    <td align="center">
-                        @foreach ($order->items as $item)
-                        {{ config('settings.currency_symbol') }}{{number_format($item->quantity * $item->product->price )}}</br>
+                        {{$item->quantity }}  {{$item->product->unit}}</br>
                         @endforeach
 
                     </td>
-                    <td>{{ config('settings.currency_symbol') }} {{$order->formattedTotal()}}</td>
+                    <td>
+                        @foreach ($order->items as $item)
+                        {{ config('settings.currency_symbol') }}{{number_format($item->price )}}</br>
+                        @endforeach
+
+                    </td>
+                    <td>{{ config('settings.currency_symbol') }} {{number_format($item->quantity*$item->price)}}</td>
+                    {{-- <td>{{ config('settings.currency_symbol') }} {{number_format($item->quantity*$item->price)}}</td> --}}
+                    {{-- <td>
+                        <div class="container">
+                            <span class="badge badge-danger" id="payment-status">Not Paid</span>
+                            <button class="btn btn-primary" id="toggle-button">Toggle Payment Status</button>
+                        </div>
+                    </td> --}}
+                    {{-- <td>{{config('settings.currency_symbol')}} {{number_format($order->total() - $order->receivedAmount(), 2)}}</td> --}}
                     <td>{{$order->created_at}}</td>
                 </tr>
                 @endforeach
+                <!-- Tampilkan link paginasi -->
+
             </tbody>
-            <tfoot>
+            <tfoot><!-- Log on to codeastro.com for more projects -->
                 <tr>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
+                    {{-- <th>{{ config('settings.currency_symbol') }} {{ number_format($receivedAmount, 2) }}</th> --}}
                     <th></th>
                     <th>{{ config('settings.currency_symbol') }} {{ number_format($total, 2) }}</th>
                     <th></th>

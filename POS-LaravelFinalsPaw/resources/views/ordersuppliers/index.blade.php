@@ -11,6 +11,7 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
+             <div class="col-md-3"></div>
             <div class="col-md-12">
                 <form action="{{route('ordersuppliers.index')}}">
                     <div class="row">
@@ -49,17 +50,19 @@
                         @foreach ($order->items as $item)
                         <li>{{ $item->product->name }}</li>
                         @endforeach
-                    </ol>
+                        </ol>
                     </td>
                     <td>
                         @foreach ($order->items as $item)
-                        {{$item->quantity }}   {{$item->product->unit}}</br>
+                        {{$item->quantity }}  {{$item->product->unit}}</br>
                         @endforeach
+
                     </td>
                     <td>
                         @foreach ($order->items as $item)
                         {{ config('settings.currency_symbol') }}  {{number_format($item->price,2) }}</br>
                         @endforeach
+
                     </td>
                     <td>{{ config('settings.currency_symbol') }} {{number_format($item->price * $item->quantity,2)}}</td>
                     <td>{{$order->created_at}}</td>
@@ -73,7 +76,6 @@
                     <th></th>
                     <th></th>
                     <th></th>
-                    <th>{{ config('settings.currency_symbol') }} {{ number_format($total, 2) }}</th>
                     <th></th>
                 </tr>
             </tfoot>
